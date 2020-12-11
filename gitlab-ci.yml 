@@ -1,0 +1,25 @@
+# Official language image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/python/tags/
+image: python:latest
+
+install:
+  - pip install -r requirements.txt
+  
+stages:
+  - main
+  - test
+
+build-code-job:
+  stage: main
+  script:
+    - echo "Estamos Dentro"
+    - python main.py
+
+
+test-code-job1:
+  stage: test
+  script:
+    - echo "If the files are built successfully, test some files with one command:"
+    - python test.py
+
+
