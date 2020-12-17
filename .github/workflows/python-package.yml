@@ -1,0 +1,32 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python package
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    container:
+      image: python
+
+    steps:
+    - name: Install requirements
+      run: |
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: main
+      run: |
+        echo "Estamos Dentro"
+        python main.py
+
+    - name: Test
+      run: |
+        echo "If the files are built successfully, test some files with one command:"
+        python test.py
