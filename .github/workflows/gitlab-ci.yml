@@ -13,13 +13,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ['3.5', '3.6', '3.7', '3.8']
 
     steps:
     - name: install requirements
-      run: pip install -r ../requirements.txt
+      run: pip install -r requirements.txt
     - name: main
       run: |
         echo "Estamos Dentro"
@@ -27,4 +24,4 @@ jobs:
     - name: test
       run: |
         echo "If the files are built successfully, test some files with one command:"
-        python ../test.py
+        python test.py
