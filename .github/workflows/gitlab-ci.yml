@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: install requirements
-      run: pip install -r requirements.txt
+      
     - name: main
       run: |
         echo "Estamos Dentro"
