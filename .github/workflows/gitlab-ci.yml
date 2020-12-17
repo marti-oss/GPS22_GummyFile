@@ -13,10 +13,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+        
     steps:
     - name: install requirements
-      
+      run: pip install -r requirements.txt
     - name: main
       run: |
         echo "Estamos Dentro"
